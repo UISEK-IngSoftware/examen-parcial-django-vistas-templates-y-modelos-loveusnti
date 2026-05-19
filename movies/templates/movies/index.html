@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Películas</title>
+    <style>
+        /* Estilos muy básicos */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+        .contenedor {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: darkblue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mi Catálogo de Películas</h1>
+
+    <div class="contenedor">
+        <h2>Listado de Películas</h2>
+        <ul>
+            {% for movie in movies %}
+                <li>
+                    <a href="{% url 'movie_detail' movie.pk %}">
+                        {{ movie.title }} - {{ movie.release_year }}
+                    </a>
+                </li>
+            {% empty %}
+                <li>No hay películas guardadas todavía.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>

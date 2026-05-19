@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de Película</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #fafafa;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: square;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Película: {{ movie.title }}</h1>
+    
+    <hr>
+
+    <ul>
+        <li><strong>Género:</strong> {{ movie.genre }}</li>
+        <li><strong>Director:</strong> {{ movie.director_name }}</li>
+        <li><strong>Año:</strong> {{ movie.release_year }}</li>
+    </ul>
+
+    <h3>Sinopsis</h3>
+    <p>{{ movie.synopsis }}</p>
+
+    <hr>
+
+    <a href="{% url 'movie_index' %}"><- Volver al listado</a>
+
+</body>
+</html>
